@@ -198,5 +198,7 @@ fill_in_missing = function(x){
 filled_iris = 
   iris_with_missing %>% 
   map_df(fill_in_missing) 
+
+filled_iris
 ```
 
