@@ -23,7 +23,7 @@ scale_colour_discrete = scale_colour_viridis_d
 scale_fill_discrete = scale_fill_viridis_d
 ```
 
-# Problem 1
+## Problem 1
 ```{r}
 # Load dataset
 homicide = 
@@ -39,6 +39,8 @@ homicide =
   filter(city_state != "TulsaAL")
 ```
 
+#### Summarize within cities to obtain the total number of homicides and the number of unsolved homicides
+
 ```{r}
 # the total number of homicides
 homicide %>% 
@@ -50,6 +52,7 @@ homicide %>%
   count(city_state)
 ```
 
+#### Estimate the proportion of homicides and confidence intervals that are unsolved
 Focus on Baltimore, MD
 
 ```{r}
@@ -110,6 +113,8 @@ results_df =
   unnest(tidy_results) %>% 
   select(city_state, estimate, starts_with("conf"))
 ```
+
+#### Create a plot that shows the estimates and CIs for each city
 
 ```{r}
 results_df %>% 
